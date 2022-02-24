@@ -18,7 +18,7 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-        </script>
+    </script>
 
     <!-------------------------------------------------------->
     <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
@@ -33,8 +33,9 @@
     <!-------------------------------------------->
     <!-- Other libraries and styles of your own -->
     <!-------------------------------------------->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
-    <!-- <link rel="stylesheet" href="./styles/style.css">
+    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+    <link rel="stylesheet" href="./styles/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 </head>
 
@@ -47,14 +48,31 @@
     <nav id="navbarPlaceholder"></nav>
 
     <!-- the body of your page goes here -->
-    <div class="container">
-        <h1>Welcome to Reportify</h1>
-        <a href="login.html" class="btn btn-info" role="button">Log in</a>
+<div class="container">
+    <div class="invite">
+        <p>
+            <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button"
+                aria-expanded="false" aria-controls="collapseExample">
+                Create a Team
+            </a>
+        </p>
+        <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                Select contacts to invite to your team:
+            </div>
+        </div>
     </div>
 
     <!-- our own footer goes here-->
-    <nav id="footerPlaceholder"></nav>
-
+    <nav id="footerPlaceholder">
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <i class="material-icons">home</i>
+            <button type="button" class="btn btn-secondary">Connect</button>
+            <button type="button" class="btn btn-secondary">Records</button>
+            <button type="button" class="btn btn-secondary">Report</button>
+        </div>
+    </nav>
+</div>
     <!---------------------------------------------->
     <!-- Your own JavaScript functions go here    -->
     <!---------------------------------------------->
