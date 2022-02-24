@@ -9,9 +9,6 @@
 .material-icons.md-36 { font-size: 36px; }
 .material-icons.md-48 { font-size: 48px; }
 
-
-
-
 /* .container {
     display:grid;
     grid-template-areas:
@@ -25,8 +22,6 @@
     /* grid-area: invite; */
 }
 
-.material-icons {
-  font-size: 100px;
 }
 /* .navbarPlaceholder {
     grid-template-areas: navbarPlaceholder;
@@ -56,4 +51,15 @@
     display: none;
     overflow: hidden;
     background-color: #f1f1f1;
+  }
+
+  /* remove bullet points from report menu */
+  #report ul {
+    list-style-type: none;
+  }
+
+  /* modify back button size */
+
+  #back {
+    font-size: 25pt;
   }
