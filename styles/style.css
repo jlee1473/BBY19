@@ -9,3 +9,22 @@
 .material-icons.md-36 { font-size: 36px; }
 .material-icons.md-48 { font-size: 48px; }
 
+
+
+
+/* .container {
+    display:grid;
+    grid-template-areas:
+    "navbarPlaceholder navbarPlaceholder navbarPlaceholder"
+    ". invite ."
+    "footer footer footer";
+} */
+
+.invite {
+    text-align: center;
+    /* grid-area: invite; */
+}
+
+/* .navbarPlaceholder {
+    grid-template-areas: navbarPlaceholder;
+} */
