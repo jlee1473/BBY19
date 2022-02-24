@@ -58,8 +58,12 @@
     list-style-type: none;
   }
 
-  /* modify back button size */
+  #homeimage {
+    width: 100%;
+    height: auto;
+  }
 
+  /* modify back button size */
   #back {
     font-size: 25pt;
   }
