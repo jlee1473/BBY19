@@ -9,8 +9,6 @@
 .material-icons.md-36 { font-size: 36px; }
 .material-icons.md-48 { font-size: 48px; }
 
-<<<<<<< HEAD
-=======
 
 
 
@@ -27,4 +25,7 @@
     text-align: center;
     grid-area:invite;
 }
->>>>>>> c710cd6a0c27e25ce60ea0f161c63b2fc778d717
+
+.material-icons {
+  font-size: 100px;
+}
