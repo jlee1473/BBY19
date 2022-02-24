@@ -12,16 +12,19 @@
 
 
 
-.container {
+/* .container {
     display:grid;
-    grid-template-areas: 
-    ". . ."
+    grid-template-areas:
+    "navbarPlaceholder navbarPlaceholder navbarPlaceholder"
     ". invite ."
-    ". . ."
     "footer footer footer";
-}
+} */
 
 .invite {
     text-align: center;
-    grid-area:invite;
+    /* grid-area: invite; */
 }
+
+/* .navbarPlaceholder {
+    grid-template-areas: navbarPlaceholder;
+} */
