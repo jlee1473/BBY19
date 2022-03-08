@@ -2,12 +2,12 @@
 //  Your web app's Firebase configuration
 //----------------------------------------
 var firebaseConfig = {
-    apiKey: "AIzaSyCfVPrPqB8zfwoMkVJm6mhZfyG2oK_TMXg",
-    authDomain: "fir-comp1800-41ff4.firebaseapp.com",
-    projectId: "fir-comp1800-41ff4",
-    storageBucket: "fir-comp1800-41ff4.appspot.com",
-    messagingSenderId: "168618548656",
-    appId: "1:168618548656:web:f995d84a11e8e78d9e8a75"
+    apiKey: "AIzaSyB8Hw0qvaDZ5uS6VvRWptUvzZyCpPA_ZKw",
+    authDomain: "comp1800-team19-reportify.firebaseapp.com",
+    projectId: "comp1800-team19-reportify",
+    storageBucket: "comp1800-team19-reportify.appspot.com",
+    messagingSenderId: "203831932783",
+    appId: "1:203831932783:web:958b9d68d41a8fe0595a9a"
 };
 
 //--------------------------------------------
