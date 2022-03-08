@@ -18,10 +18,15 @@
 } */
 
 .invite {
+  color:white;
     text-align: center;
-    /* grid-area: invite; */
+  /* grid-area: invite; */
 }
 
+.invite:visited {
+  color: white;
+  text-align: center;
+}
 
 /* .navbarPlaceholder {
     grid-template-areas: navbarPlaceholder;
