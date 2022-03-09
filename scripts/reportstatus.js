@@ -1,7 +1,7 @@
 function submitReport() {
     console.log("in")
-    let Healthy = document.querySelector('input[name="status"]:checked').value;
-    console.log(Healthy);
+    let status = document.querySelector('input[name="status"]:checked').value;
+    console.log(status);
 
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
@@ -14,10 +14,10 @@ function submitReport() {
                     db.collection("users").doc(user.uid).collection("Reports").add({
                     //db.collection("Reports").add({//
                         userID: userID,
-                        currentStatus: Healthy,
+                        currentStatus: status,
                         timestamp: firebase.firestore.FieldValue.serverTimestamp()
                     }).then(()=>{
-                        window.location.href = "report4.html"; //new line added
+                        updateStatus(status, userID);
                     })
                 })
                    
@@ -26,4 +26,11 @@ function submitReport() {
         }
     });
 
+}
+
+function updateStatus(status, userID) {
+    db.collection("users").doc(userID).update({
+        latestStatus: status
+    }) 
+    .then(window.location.href = "report4.html"); //new line added)
 }
