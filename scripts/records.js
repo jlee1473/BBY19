@@ -13,20 +13,29 @@ function populateStatusDynamically() {
                 // testHikeCard.querySelector('.card-length').innerHTML = hikeLength;
                 // testHikeCard.querySelector('a').onclick = () => setHikeData(hikeID);
                 // testHikeCard.querySelector('img').src = `./images/${hikeID}.jpg`;
+                // var status = getStatus(doc.id); 
+                var status = doc.data().currentStatus;
+                testRecordsTable.querySelector('.health-status').innerHTML = status;
+                
                 hikeCardGroup.appendChild(testRecordsTable);
+
+                
             })
 
         })
 
         
-    db.collection("users").doc.allUsers.allReportscollection("Reports").get()
-        .then(allReports => {
-            allReports.forEach(doc =>{
-                var memberStatus = doc.data().currentStatus;
-                let testRecordsTable = recordsTableTemplate.content.cloneNode(true);
-                testRecordsTable.querySelector('.health-status').innerHTML = memberStatus;
-                hikeCardGroup.appendChild(testRecordsTable);
+    }
+    populateStatusDynamically();
+    function getStatus(id) {
+        db.collection("users").doc(id).get()
+            .then(doc => {
+                console.log(doc.data().currentStatus);
+                    // var memberStatus = doc.data().currentStatus;
+                    // let testRecordsTable = recordsTableTemplate.content.cloneNode(true);
+                    // testRecordsTable.querySelector('.health-status').innerHTML = memberStatus;
+                    // hikeCardGroup.appendChild(testRecordsTable);
+                })
             })
-        })
+        
 }
-populateStatusDynamically();
