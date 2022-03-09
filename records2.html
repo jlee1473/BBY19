@@ -50,13 +50,12 @@
 
     <template id="recordsTableTemplate">
         <table width="25%" class="records-table">
-            <tbody>
+            <tbody class="fs-5">
                 <tr>
-                    <td class="user-name">Placeholder</td>
-                    <td class="health-status">Placeholder</td>
                     <td class="user-name">Andrew</td>
-                    <td class="health-status position-fixed">Healthy</td>
+                    <td class="health-status position-fixed btn btn-success">Healthy</td>
                 </tr>
+                <br>
                 <!-- <tr>
             <td>Jason</td>
             <td>Healthy</td>
@@ -71,15 +70,21 @@
 
 
     <div class="container">
-        <h1>Your Team's Health Status</h1>
+        <h1>Team status</h1>
         <!-- Here is container for cards  -->
         <div class="container">
-
-            <div id="hikeCardGroup" class="row-auto">
+            <table width="25%">
+                <thead class="thead-light fs-4">
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col" class="position-fixed">Current Status</th>
+                    </tr>
+                </thead>
+            </table>
+            <div id="hikeCardGroup">
             </div>
         </div>
     </div>
-    
     <!------Code for having employee name with a button-->
     <!-- <div id="employeeName" class="container text-center">
         <br><br><br><br><br><br>
