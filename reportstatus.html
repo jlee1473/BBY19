@@ -50,25 +50,24 @@
     <div class="recovery-time-form">
         <h4 class="fw-bold text-center mt-3">Recovery status</h4><br>
         <form class="px-5" action="">
-            <p class="fw-bold">Choose your current status</p>
+            <p class="fw-bold">Select your current status</p><br>
 
-            <div class="recovery-time-form">
-                <input class="form-check-input" type="radio" name="status" value="true" id="recovery-radio-1" />
-                <label class="form-check-label fs-6 badge bg-primary" for="recovery-radio-1">
-                    Healthy
-                </label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="status" value="healthy">
+                <label class="form-check-label fs-6 badge bg-success">Healthy</label>
             </div><br>
-            
-            <div class="recovery-time-form">
-                <input class="form-check-input" type="radio" name="status" value="true" id="recovery-radio-2" />
-                <label class="form-check-label fs-6 badge bg-primary" for="recovery-radio-2">
-                    Recovering
-                </label>
-            </div><br>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="status" value="recovering">
+                <label class="form-check-label fs-6 badge bg-warning">Recovering</label>
+            </div>
         </form>
         
         <div class="submit-div text-center">
-            <button type="button" class="btn btn-primary btn-lg" href="" onclick="submitReport()">Submit</button>
+            <div class="d-flex justify-content-end">
+                <button type="button" class="btn btn-lg btn-primary" onclick="submitReport()">Submit</button>
+            </div>
+            <!--   
+            <button type="button" class="btn btn-primary btn-lg" href="" onclick="submitReport()">Submit</button> -->
         </div>
     </div>
 
@@ -81,6 +80,7 @@
     <script src="./scripts/firebaseAPI_TEAM99.js"></script>
     <script src="./scripts/skeleton.js"></script>
     <script src="./scripts/script.js"></script>
+    <script src="./scripts/reportstatus.js"></script>
 
 </body>
 
