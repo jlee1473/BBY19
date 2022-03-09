@@ -49,17 +49,11 @@
     <!-- the body of your page goes here -->
 
     <template id="recordsTableTemplate">
-        <table class="records-table">
-            <thead class="thead-light">
-                <tr>
-                    <th scope="col">Name</th>
-                    <th scope="col">Current Status</th>
-                </tr>
-            </thead>
+        <table width="25%" class="records-table">
             <tbody>
                 <tr>
                     <td class="user-name">Andrew</td>
-                    <td class="health-status">Healthy</td>
+                    <td class="health-status position-fixed">Healthy</td>
                 </tr>
                 <!-- <tr>
             <td>Jason</td>
@@ -78,7 +72,15 @@
         <h1>Some popular hikes</h1>
         <!-- Here is container for cards  -->
         <div class="container">
-            <div id="hikeCardGroup" class="row row-cols-auto">
+            <table width="25%">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col" class="position-fixed">Current Status</th>
+                </tr>
+            </thead>
+            </table>
+            <div id="hikeCardGroup">
             </div>
         </div>
     </div>
