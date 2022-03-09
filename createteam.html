@@ -55,14 +55,15 @@
             <br>
             <textarea class="form-control" id="report-form" rows="1">Enter your team name</textarea>
         </div>
-        
+
         <div class="create-team">
             <br>
             <textarea class="form-control" id="report-form" rows="1">Description</textarea>
         </div>
 
         <div class="submit-div text-center"> <br>
-            <a type="button" class="btn btn-primary btn-lg" href="invite.html">Create Team</a>
+            <!-- event listener onclick = "addToTeam" js code to enable form is at the bottom -->
+            <a type="button" class="btn btn-primary btn-lg" href="invite.html" onclick="addToTeam()">Create Team</a>
         </div>
     </div>
 
@@ -91,7 +92,12 @@
     <script src="./scripts/firebaseAPI_TEAM99.js"></script>
     <script src="./scripts/skeleton.js"></script>
     <script src="./scripts/script.js"></script>
-
+    <script>
+        function editUserInfo() {
+            //Enable the form fields
+            document.getElementById('personalInfoFields').disabled = false;
+        }
+    </script>
 </body>
 
 </html>
