@@ -14,7 +14,7 @@ function populateStatusDynamically() {
                 // testHikeCard.querySelector('a').onclick = () => setHikeData(hikeID);
                 // testHikeCard.querySelector('img').src = `./images/${hikeID}.jpg`;
                 // var status = getStatus(doc.id); 
-                var status = doc.data().currentStatus;
+                var status = doc.data().latestStatus;
                 testRecordsTable.querySelector('.health-status').innerHTML = status;
 
                 hikeCardGroup.appendChild(testRecordsTable);
