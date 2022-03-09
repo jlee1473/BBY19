@@ -11,7 +11,8 @@ function submitReport() {
             currentUser.get()
                 .then(userDoc => {
                     var userEmail = userDoc.data().email;
-                    db.collection("Reports").add({
+                    db.collection("users").doc(user.uid).collection("Reports").add({
+                    //db.collection("Reports").add({//
                         userID: userID,
                         currentStatus: Healthy,
                         timestamp: firebase.firestore.FieldValue.serverTimestamp()
