@@ -72,3 +72,8 @@
   #back {
     font-size: 25pt;
   }
+
+  .records-table {
+    /* width: 90%; */
+    outline: 5px dotted green;
+  }

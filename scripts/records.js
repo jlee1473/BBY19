@@ -1,7 +1,7 @@
 function populateStatusDynamically() {
     let recordsTableTemplate = document.getElementById("recordsTableTemplate");
     let hikeCardGroup = document.getElementById("hikeCardGroup");
-    
+
     db.collection("users").get()
         .then(allusers => {
             allusers.forEach(doc => {
@@ -16,6 +16,17 @@ function populateStatusDynamically() {
                 hikeCardGroup.appendChild(testRecordsTable);
             })
 
+        })
+
+        
+    db.collection("users").doc.allUsers.allReportscollection("Reports").get()
+        .then(allReports => {
+            allReports.forEach(doc =>{
+                var memberStatus = doc.data().currentStatus;
+                let testRecordsTable = recordsTableTemplate.content.cloneNode(true);
+                testRecordsTable.querySelector('.health-status').innerHTML = memberStatus;
+                hikeCardGroup.appendChild(testRecordsTable);
+            })
         })
 }
 populateStatusDynamically();
