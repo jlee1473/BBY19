@@ -22,7 +22,7 @@ function submitReport() {
                 })
                    
         } else {
-            // No user is signed in.
+            console.log("Please log in"); // No user is signed in.
         }
     });
 
