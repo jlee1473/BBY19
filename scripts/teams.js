@@ -12,9 +12,9 @@ function createTeam() {
     // or whether we leave that to developer to handle.
 
     //write to firestore with a new ID
-    // {teamMembers:currentUser} add inside push() if we want to add user info to team on click
+    // {teamMembers:currentUser} add inside add() if we want to add user info to team on click
     teamID.add({
-        teamMembers: ""
+        teamMembers: [""]
     }).then(function () {
             console.log("New team added to firestore");
             window.location.assign("invite.html"); //re-direct to invite.html after signup
@@ -24,8 +24,9 @@ function createTeam() {
         });
 }
 
+//Need to be able to pull team from local memory from createteam.html and if unavailable, pull a team based on the userID 
 // function displayTeam() {
-//     db.collection("team").get(docID)                                                      //name of the collection and documents should matach excatly with what you have in Firestore
+//     db.collection("team").get()        //name of the collection and documents should matach excatly with what you have in Firestore
 //       .onSnapshot(docID => {                                                               //arrow notation
 //            console.log("current document data: " + doc.data());                          //.data() returns data object
 //            document.getElementById("quote-goes-here").innerHTML = team.data().TeamMembers;      //using javascript to display the data on the right place
@@ -36,3 +37,4 @@ function createTeam() {
 //       })
 // }
 // displayTeam();        //calling the function
+
