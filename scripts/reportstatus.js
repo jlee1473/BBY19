@@ -32,5 +32,5 @@ function updateStatus(status, userID) {
     db.collection("users").doc(userID).update({
         latestStatus: status
     }) 
-    .then(window.location.href = "report4.html"); //new line added)
+    .then(window.location.href = "submit-complete.html"); //new line added)
 }
