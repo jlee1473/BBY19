@@ -14,8 +14,8 @@ function createTeam() {
     //write to firestore with a new ID
     // {teamMembers:currentUser} add inside add() if we want to add user info to team on click
     teamID.add({
-        teamMembers: [""]
-    }).then(function () {
+            teamMembers: [""]
+        }).then(function () {
             console.log("New team added to firestore");
             window.location.assign("invite.html"); //re-direct to invite.html after signup
         })
@@ -38,3 +38,47 @@ function createTeam() {
 // }
 // displayTeam();        //calling the function
 
+function joinTeam() {
+
+    firebase.auth().onAuthStateChanged(user => {
+        // Check if user is signed in:
+        if (user) {
+            // Do something for the current logged-in user here: 
+            console.log(user.uid);
+
+            //teamID and userID are put into variables
+
+            var userID = user.uid;
+
+
+            db.collection("team").get()
+                .then(snap => {
+                    snap.forEach(doc => {
+                        var teamUID = doc.data().key();
+                        var teamID = document.getElementById("jointeam").innerText;
+                        // var teamUID = db.collection("team").key;
+
+                        if (teamID == teamUID)
+                            db.collection("team").doc("teamMembers").appendchild(userID)
+
+                        console.log(db.collection("team").key());
+                    })
+
+                })
+        } else {
+            console.log("Please log in to join a team");
+        }
+    })
+}
+
+// var team_Name = teamDoc.data().teamMembers;
+// console.log(team_Name);
+// //method #1:  insert with html only
+// document.add().getElementById("jointeam").innerText  //using javascript
+
+// //add userID to end of teamMembers array in the document with value teamID
+// db.collection("team").doc(teamID).appendchild({
+
+// db.collection("team").doc(team.uid).add({
+//     teamMembers: userID
+// })
