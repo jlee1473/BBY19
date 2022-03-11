@@ -49,7 +49,7 @@
     <!-- the body of your page goes here -->
     <!-- stuff -->
 
-    <div class="self-report-form">
+    <!-- <div class="self-report-form">
         <h1>Create a team </br></h1>
         <div class="create-team">
             <br>
@@ -59,11 +59,12 @@
         <div class="create-team">
             <br>
             <textarea class="form-control" id="report-form" rows="1">Description</textarea>
-        </div>
+        </div> -->
 
         <div class="submit-div text-center"> <br>
             <!-- event listener onclick = "addToTeam" js code to enable form is at the bottom -->
-            <a type="button" class="btn btn-primary btn-lg" href="invite.html" onclick="addToTeam()">Create Team</a>
+            <!--href=invite.html add this below to link-->
+            <a type="button" class="btn btn-primary btn-lg"  onclick="createTeam()">Create Team</a>
         </div>
     </div>
 
@@ -91,13 +92,13 @@
     <!---------------------------------------------->
     <script src="./scripts/firebaseAPI_TEAM99.js"></script>
     <script src="./scripts/skeleton.js"></script>
-    <script src="./scripts/script.js"></script>
-    <script>
+    <script src="./scripts/teams.js"></script>
+    <!-- <script>
         function editUserInfo() {
             //Enable the form fields
             document.getElementById('personalInfoFields').disabled = false;
         }
-    </script>
+    </script> -->
 </body>
 
 </html>
