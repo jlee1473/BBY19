@@ -49,15 +49,13 @@
     <!-- the body of your page goes here -->
 
     <template id="recordsTableTemplate">
-        <table width="25%" class="records-table">
-            <tbody class="fs-5">
-                <tr>
-                    <td class="user-name">Andrew</td>
-                    <td class="health-status position-fixed btn btn-success">Healthy</td>
-                    <!-- <td class="last-update">No updates yet</td> -->
-                </tr>
-                <br>
-                <!-- <tr>
+        <tr>
+            <td class="user-name">Andrew</td>
+            <td class="health-status btn btn-success">Healthy</td>
+            <td class="last-update"></td>
+        </tr>
+        <br>
+        <!-- <tr>
             <td>Jason</td>
             <td>Healthy</td>
           </tr>
@@ -65,39 +63,32 @@
             <td>Gabriel</td>
             <td>Healthy</td>
           </tr> -->
-            </tbody>
-        </table>
     </template>
 
 
-    <div class="container">
         <h1>Team status</h1>
-        <!-- Here is container for cards  -->
-        <div class="container">
-            <table width="25%">
+            <table>
                 <thead class="thead-light fs-4">
                     <tr>
-                        <th scope="col">Name</th>
-                        <th scope="col" class="position-fixed">Current Status</th>
-                        <!-- <th scope="col">Last Updated</th> -->
+                        <td>Name</td>
+                        <td>Current Status</td>
+                        <td>Latest Status</td>
                     </tr>
                 </thead>
+                <tbody class="fs-5" id="hikeCardGroup">
+                </tbody>
             </table>
-            <div id="hikeCardGroup">
-            </div>
-        </div>
-    </div>
+
+
     <!------Code for having employee name with a button-->
     <!-- <div id="employeeName" class="container text-center">
         <br><br><br><br><br><br>
         <a href="records3.html" class="btn btn-primary btn-lg" role="button">Employee Name 1</a><br><br><br>
     </div>
-
     <div id="employeeName" class="container text-center">
         <br><br><br><br><br><br>
         <a href="records3.html" class="btn btn-primary btn-lg" role="button">Employee Name 2</a><br><br><br>
     </div>
-
     <div id="employeeName" class="container text-center">
         <br><br><br><br><br><br>
         <a href="records3.html" class="btn btn-primary btn-lg" role="button">Employee Name 3</a><br><br><br>
