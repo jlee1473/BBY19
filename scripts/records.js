@@ -17,7 +17,7 @@ function populateStatusDynamically() {
                 var status = doc.data().latestStatus;
                 testRecordsTable.querySelector('.health-status').innerHTML = status;
                 var lastUpdate = doc.data().latestStatusTimeStamp;
-                testRecordsTable.querySelector('.last-update').innerHTML=lastUpdate;
+                testRecordsTable.querySelector('.last-update').innerHTML=lastUpdate.toDate();;
                 
                 hikeCardGroup.appendChild(testRecordsTable);
 
