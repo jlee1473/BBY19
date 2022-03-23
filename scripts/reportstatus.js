@@ -23,6 +23,7 @@ function submitReport() {
                    
         } else {
             console.log("Please log in"); // No user is signed in.
+            window.location.href = "index.html";
         }
     });
 
@@ -30,7 +31,8 @@ function submitReport() {
 
 function updateStatus(status, userID) {
     db.collection("users").doc(userID).update({
-        latestStatus: status
+        latestStatus: status,
+        latestStatusTimeStamp: firebase.firestore.FieldValue.serverTimestamp()
     }) 
     .then(window.location.href = "submit-complete.html"); //new line added)
 }
