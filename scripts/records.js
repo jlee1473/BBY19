@@ -16,7 +16,9 @@ function populateStatusDynamically() {
                 // var status = getStatus(doc.id); 
                 var status = doc.data().latestStatus;
                 testRecordsTable.querySelector('.health-status').innerHTML = status;
-
+                var lastUpdate = doc.data().latestStatusTimeStamp;
+                testRecordsTable.querySelector('.last-update').innerHTML=lastUpdate;
+                
                 hikeCardGroup.appendChild(testRecordsTable);
 
 
@@ -27,6 +29,8 @@ function populateStatusDynamically() {
 
 }
 populateStatusDynamically();
+
+//This function will be reserved for pulling all records for a user after a teams link.
 function getStatus(id) {
     db.collection("users").doc(id).get()
         .then(doc => {
@@ -38,3 +42,5 @@ function getStatus(id) {
         })
 }
         
+
+
