@@ -48,9 +48,9 @@
 
     <!-- the body of your page goes here -->
     <div class="recovery-time-form">
-        <h4 class="fw-bold text-center mt-3">Recovery status</h4><br>
+        <h4 class="fw-bold mt-3 text-center">Self-report</h4><br>
         <form class="px-5" action="">
-            <p class="fw-bold">Select your current status</p><br>
+            <p class="fw-bold text-center">Select your current status</p>
 
             <div class="form-check">
                 <input class="form-check-input" type="radio" name="status" value="healthy">
@@ -60,50 +60,171 @@
                 <input class="form-check-input" type="radio" name="status" value="recovering">
                 <label class="form-check-label fs-6 badge bg-warning">Recovering</label>
             </div>
-        </form>
+        </form><br>
 
         <div class="self-report-form">
-            <h4 class="fw-bold mt-3 text-center">Self-report</h4><br>
             <form class="px-5" action="submit">
-                <p class="fw-bold">Choose all symptoms that apply</p>
-    
+                <p class="fw-bold mt-3 text-center">Choose all symptoms that apply</p>
                 <div class="self-report-form">
-                    <input class="form-check-input" type="checkbox" name="cough" value="yes" id="flexCheckDefault" />
-                    <label class="form-check-label fs-6 badge bg-primary" for="flexCheckDefault">
-                        Cough
-                    </label>
-                </div><br>
-    
-                <!-- Checked checkbox -->
-                <div class="self-report-form">
-                    <input class="form-check-input" type="checkbox" name="fatigue" value="yes" id="flexCheckDefault2" />
-                    <label class="form-check-label fs-6 badge bg-primary" for="flexCheckDefault2">
-                        Fatigue
-                    </label>
-                </div><br>
-    
-                <!-- Checked checkbox -->
-                <div class="self-report-form">
-                    <input class="form-check-input" type="checkbox" name="loss-of-taste/smell" value="yes" id="flexCheckDefault3" />
-                    <label class="form-check-label fs-6 badge bg-primary" for="flexCheckDefault3">
-                        Loss of taste or smell
-                    </label>
-                </div><br>
-    
-                <div class="self-report-form">
-                    <input class="form-check-input" type="checkbox" name="breathing-difficulty" value="yes" id="flexCheckDefault4" />
-                    <label class="form-check-label fs-6 badge bg-primary" for="flexCheckDefault4">
-                        Difficulty breathing
-                    </label>
-                </div><br>
-    
-                <div class="self-report-form">
-                    <input class="form-check-input" type="checkbox" name="chest-pain" value="yes" id="flexCheckDefault5" />
-                    <label class="form-check-label fs-6 badge bg-primary" for="flexCheckDefault5">
-                        Chest pain
-                    </label>
-                </div><br>
-    
+                    <label class="fw-bold fs-6">Cough</label><br>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input " type="radio" name="cough" value="severe">
+                        <label class="form-check-label fs-6" for="flexCheckDefault">
+                            Severe
+                        </label>
+                    </div>
+
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="cough" value="moderate">
+                        <label class="form-check-label fs-6" for="flexCheckDefault">
+                            Moderate
+                        </label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="cough" value="mild">
+                        <label class="form-check-label fs-6" for="flexCheckDefault">
+                            Mild
+                        </label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="cough" value="none">
+                        <label class="form-check-label fs-6" for="flexCheckDefault">
+                            None
+                        </label>
+                    </div>
+                </div>
+
+                <br><div class="self-report-form">
+                    <label class="fw-bold fs-6">Fatigue</label><br>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input " type="radio" name="fatigue" value="severe">
+                        <label class="form-check-label fs-6" for="flexCheckDefault">
+                            Severe
+                        </label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="fatigue" value="moderate">
+                        <label class="form-check-label fs-6" for="flexCheckDefault">
+                            Moderate
+                        </label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="fatigue" value="mild">
+                        <label class="form-check-label fs-6" for="flexCheckDefault">
+                            Mild
+                        </label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="fatigue" value="none">
+                        <label class="form-check-label fs-6" for="flexCheckDefault">
+                            None
+                        </label>
+                    </div>
+                </div>
+
+                <br><div class="self-report-form">
+                    <label class="fw-bold fs-6">Loss of taste or smell</label><br>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input " type="radio" name="loss-of-taste-or-smell" value="severe">
+                        <label class="form-check-label fs-6" for="flexCheckDefault">
+                            Severe
+                        </label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="loss-of-taste-or-smell" value="moderate">
+                        <label class="form-check-label fs-6" for="flexCheckDefault">
+                            Moderate
+                        </label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="loss-of-taste-or-smell" value="mild">
+                        <label class="form-check-label fs-6" for="flexCheckDefault">
+                            Mild
+                        </label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="loss-of-taste-or-smell" value="none">
+                        <label class="form-check-label fs-6" for="flexCheckDefault">
+                            None
+                        </label>
+                    </div>
+                </div>
+
+                <br><div class="self-report-form">
+                    <label class="fw-bold fs-6">Difficulty breathing</label><br>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input " type="radio" name="breathing-difficulty" value="severe">
+                        <label class="form-check-label fs-6" for="flexCheckDefault">
+                            Severe
+                        </label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="breathing-difficulty" value="moderate">
+                        <label class="form-check-label fs-6" for="flexCheckDefault">
+                            Moderate
+                        </label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="breathing-difficulty" value="mild">
+                        <label class="form-check-label fs-6" for="flexCheckDefault">
+                            Mild
+                        </label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="breathing-difficulty" value="none">
+                        <label class="form-check-label fs-6" for="flexCheckDefault">
+                            None
+                        </label>
+                    </div>
+                </div>
+
+                <br><div class="self-report-form">
+                    <label class="fw-bold fs-6">Chest pain</label><br>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input " type="radio" name="chest-pain" value="severe">
+                        <label class="form-check-label fs-6" for="flexCheckDefault">
+                            Severe
+                        </label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="chest-pain" value="moderate">
+                        <label class="form-check-label fs-6" for="flexCheckDefault">
+                            Moderate
+                        </label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="chest-pain" value="mild">
+                        <label class="form-check-label fs-6" for="flexCheckDefault">
+                            Mild
+                        </label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="chest-pain" value="none">
+                        <label class="form-check-label fs-6" for="flexCheckDefault">
+                            None
+                        </label>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button type="button" class="btn btn-lg btn-primary" onclick="submitReport()">Submit</button>
+                </div>
+
                 <!-- <div class="self-report-form">
                     <input class="form-check-input" type="checkbox" name="symptom" value="other" id="flexCheckDefault6" />
                     <label class="form-check-label fs-6 badge bg-primary" for="flexCheckDefault6">
@@ -115,11 +236,8 @@
                     </div>
                 </div>
             </form> -->
-        
-            <div class="text-center">
-                <button type="button" class="btn btn-lg btn-primary" onclick="submitReport()">Submit</button>
-            </div>
-            <!--   
+
+                <!--   
             <button type="button" class="btn btn-primary btn-lg" href="" onclick="submitReport()">Submit</button> -->
         </div>
     </div>

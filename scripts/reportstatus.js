@@ -2,13 +2,12 @@ function submitReport() {
     console.log("in")
     let status = document.querySelector('input[name="status"]:checked').value;
     console.log(status);
-
     let cough = document.querySelector('input[name="cough"]:checked').value;
     console.log(cough);
     let fatigue = document.querySelector('input[name="fatigue"]:checked').value;
     console.log(fatigue);
-    let loss = document.querySelector('input[name="loss-of-taste/smell"]:checked').value;
-    console.log(loss);
+    let lossOfTasteSmell = document.querySelector('input[name="loss-of-taste-or-smell"]:checked').value;
+    console.log(lossOfTasteSmell);
     let breathing = document.querySelector('input[name="breathing-difficulty"]:checked').value;
     console.log(breathing);
     let chestPain = document.querySelector('input[name="chest-pain"]:checked').value;
@@ -29,7 +28,7 @@ function submitReport() {
                         currentStatus: status,
                         Cough: cough,
                         Fatigue: fatigue,
-                        LossOfTasteOrSmell: loss,
+                        LossOfTasteOrSmell: lossOfTasteSmell,
                         difficultyBreathing: breathing,
                         chestPain: chestPain,
                         timestamp: firebase.firestore.FieldValue.serverTimestamp()
