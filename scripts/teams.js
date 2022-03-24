@@ -58,7 +58,7 @@ function joinTeam() {
                         var teamID = document.getElementById("jointeam").innerText;
                         // var teamUID = db.collection("team").key;
 
-                        if (teamID == teamUID)
+                        if (teamID == teamUID) 
                             db.collection("team").doc("teamMembers").appendchild(userID)
 
                         console.log(db.collection("team").key());
