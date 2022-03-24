@@ -3,6 +3,18 @@ function submitReport() {
     let status = document.querySelector('input[name="status"]:checked').value;
     console.log(status);
 
+    let cough = document.querySelector('input[name="cough"]:checked').value;
+    console.log(cough);
+    let fatigue = document.querySelector('input[name="fatigue"]:checked').value;
+    console.log(fatigue);
+    let loss = document.querySelector('input[name="loss-of-taste/smell"]:checked').value;
+    console.log(loss);
+    let breathing = document.querySelector('input[name="breathing-difficulty"]:checked').value;
+    console.log(breathing);
+    let chestPain = document.querySelector('input[name="chest-pain"]:checked').value;
+    console.log(chestPain);
+    
+
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
             var currentUser = db.collection("users").doc(user.uid)
@@ -15,6 +27,11 @@ function submitReport() {
                     //db.collection("Reports").add({//
                         userID: userID,
                         currentStatus: status,
+                        Cough: cough,
+                        Fatigue: fatigue,
+                        LossOfTasteOrSmell: loss,
+                        difficultyBreathing: breathing,
+                        chestPain: chestPain,
                         timestamp: firebase.firestore.FieldValue.serverTimestamp()
                     }).then(()=>{
                         updateStatus(status, userID);
