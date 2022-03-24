@@ -2,7 +2,9 @@ function populateStatusDynamically() {
     let recordsTableTemplate = document.getElementById("recordsTableTemplate");
     let hikeCardGroup = document.getElementById("hikeCardGroup");
 
-    db.collection("users").get()
+    db.collection("users")
+    .orderBy("latestStatus")
+    .get()
         .then(allusers => {
             allusers.forEach(doc => {
                 var teamMember = doc.data().name; //gets the name field
