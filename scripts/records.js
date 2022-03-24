@@ -3,7 +3,7 @@ function populateStatusDynamically() {
     let hikeCardGroup = document.getElementById("hikeCardGroup");
 
     db.collection("users")
-    .orderBy("latestStatus")
+    .orderBy("latestStatus", "desc")
     .get()
         .then(allusers => {
             allusers.forEach(doc => {
