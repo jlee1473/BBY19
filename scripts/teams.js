@@ -55,12 +55,12 @@ function createTeam() {
             // Check if user is signed in:
             if (user) {
                 // Do something for the current logged-in user here: 
-                console.log(user.uid);
-
+                // var currentUser = db.collection("users").doc(user.uid)
+                // currentUser.get()
+            
                 //teamID and userID are put into variables
-
-                var userID = user.uid;
-
+                var currentUser = user.uid;
+                console.log(currentUser);
 
                 db.collection("team").get()
                     .then(snap => {
@@ -70,10 +70,12 @@ function createTeam() {
                             var joinID = document.getElementById("jointeam").innerText;
                             // var teamUID = db.collection("team").key;
 
-                            if (joinID == teamID)
-                                db.collection("team").doc("teamMembers").appendChild(userID);
-
+                            if (joinID == teamID){
+                                db.collection("team").doc("teamMembers").appendChild(currentUser);
+                             
+                                
                             console.log(doc.id);
+                            }
                         })
 
                     })
