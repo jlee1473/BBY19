@@ -1,10 +1,11 @@
-function populateStatusDynamically() {
+function populateStatusDynamically(team) {
     let recordsTableTemplate = document.getElementById("recordsTableTemplate");
-    let hikeCardGroup = document.getElementById("hikeCardGroup");
+    let userData = document.getElementById("data");
 
     db.collection("users")
-    .orderBy("latestStatus", "desc")
-    .get()
+        .where("memberOf", "==", team)
+        .orderBy("latestStatus", "desc")
+        .get()
         .then(allusers => {
             allusers.forEach(doc => {
                 var teamMember = doc.data().name; //gets the name field
@@ -13,30 +14,41 @@ function populateStatusDynamically() {
                 var status = doc.data().latestStatus;
                 testRecordsTable.querySelector('.health-status').innerHTML = status;
                 var lastUpdate = doc.data().latestStatusTimeStamp.toDate();
-                testRecordsTable.querySelector('.last-update').innerHTML=lastUpdate;
-                
-                hikeCardGroup.appendChild(testRecordsTable);
+                testRecordsTable.querySelector('.last-update').innerHTML = lastUpdate;
 
-
+                userData.appendChild(testRecordsTable);
             })
 
         })
-
-
 }
-populateStatusDynamically();
+function displayMyTeam() {
+    firebase.auth().onAuthStateChanged(user => {
+
+        if (user) {
+
+            let userID = user.uid;
+            db.collection("users").doc(userID).get().then(doc => {
+                team = doc.data().memberOf;
+                console.log(team);
+                populateStatusDynamically(team);
+            })
+        }
+    })
+}
+displayMyTeam();
+// populateStatusDynamically();
 
 //This function will be reserved for pulling all records for a user after a teams link.
 function getStatus(id) {
-    db.collection("users").doc(id).get()
-        .then(doc => {
-            console.log(doc.data().currentStatus);
-            // var memberStatus = doc.data().currentStatus;
-            // let testRecordsTable = recordsTableTemplate.content.cloneNode(true);
-            // testRecordsTable.querySelector('.health-status').innerHTML = memberStatus;
-            // hikeCardGroup.appendChild(testRecordsTable);
-        })
-}
-        
+            db.collection("users").doc(id).get()
+                .then(doc => {
+                    console.log(doc.data().currentStatus);
+                    // var memberStatus = doc.data().currentStatus;
+                    // let testRecordsTable = recordsTableTemplate.content.cloneNode(true);
+                    // testRecordsTable.querySelector('.health-status').innerHTML = memberStatus;
+                    // hikeCardGroup.appendChild(testRecordsTable);
+                })
+        }
 
 
+    
