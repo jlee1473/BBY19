@@ -89,6 +89,8 @@ function joinTeam() {
                                 // db.collection("team").doc(joinID).collection("teamMembers").update( {   <-- incorrect attempt
                                 db.collection("team").doc(joinID).update({
                                     teamMembers: firebase.firestore.FieldValue.arrayUnion(userID)
+                                }).then(()=>{
+                                    updateTeam(joinID, userID);
                                 })
 
                                 userDoc.add({
@@ -108,6 +110,12 @@ function joinTeam() {
             console.log("Please log in to join a team");
         }
     })
+}
+
+function updateTeam(joinID, userID) {
+    db.collection("users").doc(userID).update({
+        memberOf: joinID
+    }) 
 }
 
 
