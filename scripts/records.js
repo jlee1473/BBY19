@@ -18,9 +18,9 @@ function populateStatusDynamically(team) {
 
                 userData.appendChild(testRecordsTable);
             })
-
         })
 }
+
 function displayMyTeam() {
     firebase.auth().onAuthStateChanged(user => {
 
@@ -35,6 +35,7 @@ function displayMyTeam() {
         }
     })
 }
+
 displayMyTeam();
 // populateStatusDynamically();
 

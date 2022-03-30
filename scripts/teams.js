@@ -40,20 +40,28 @@ function createTeam() {
     })
 }
 
-// pull a team based on the userID 
-function displayTeam() {
-    db.collection("users").doc(user.uid).get()
-        .then(userDoc => {
-            var userTeam = userDoc.data().memberOf;
-            console.log(userTeam);
-        })
+function displayMyTeam() {
+    firebase.auth().onAuthStateChanged(user => {
+        if (user) {
+            let userID = user.uid;
+            db.collection("users").doc(userID).get().then(doc => {
+                team = doc.data().memberOf;
+                console.log(team);
+                
+                document.getElementById("team-id").innerHTML = team; 
+            })
+        }
+    })
 }
+displayMyTeam();
+
+// read_display_Quote()        //calling the function
 
 // function displayTeam() {
 //     db.collection("team").get()        //name of the collection and documents should matach excatly with what you have in Firestore
 //       .onSnapshot(docID => {                                                               //arrow notation
 //            console.log("current document data: " + doc.data());                          //.data() returns data object
-//            document.getElementById("quote-goes-here").innerHTML = team.data().TeamMembers;      //using javascript to display the data on the right place
+//            document.getElementById("team-id").innerHTML = team.data().TeamMembers;      //using javascript to display the data on the right place
 
 //            //Here are other ways to access key:value data fields
 //            //$('#quote-goes-here').text(c.data().quote);                                       //using jquery object dot notation
@@ -61,6 +69,7 @@ function displayTeam() {
 //       })
 // }
 // displayTeam();        //calling the function
+
 
 function joinTeam() {
 
@@ -89,14 +98,14 @@ function joinTeam() {
                                 // db.collection("team").doc(joinID).collection("teamMembers").update( {   <-- incorrect attempt
                                 db.collection("team").doc(joinID).update({
                                     teamMembers: firebase.firestore.FieldValue.arrayUnion(userID)
-                                }).then(()=>{
+                                }).then(() => {
                                     updateTeam(joinID, userID);
                                 })
 
                                 userDoc.add({
                                     memberOf: teamID
                                 })
-                    
+
                                 // db.collection("users").doc(userID).add({
                                 //     memberOf: joinID
                                 // })
@@ -115,7 +124,7 @@ function joinTeam() {
 function updateTeam(joinID, userID) {
     db.collection("users").doc(userID).update({
         memberOf: joinID
-    }) 
+    })
 }
 
 

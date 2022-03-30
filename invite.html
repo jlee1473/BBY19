@@ -46,26 +46,36 @@
   <!-- our own navbar goes here -->
   <nav id="navbarPlaceholder"></nav>
 
-  <button type="button" class="collapsible">Your Team Invite Code</button>
+  <!-- <button type="button" class="collapsible">Your Team Invite Code</button>
   <div class="content">
-    <button type="button" class="collapsible"><span id="team-id">Share this Invite Code</span></button>
+    <button type="button" class="collapsible">Share this Invite Code: <span id="team-id"></span></button>
+  </div> -->
+
+
+  <form>
+    <button type="button">Your Team Invite Code</button>
+  </form>
+
+
+  <div>
+    <p>Share this Invite Code: <span id="team-id"></span></p>
   </div>
 
-    <!-- AddToAny BEGIN -->
-    <h1>Invite via link</h1>
-    <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
-      <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
-      <a class="a2a_button_email"></a>
-      <a class="a2a_button_facebook"></a>
-      <a class="a2a_button_whatsapp"></a>
-      <a class="a2a_button_linkedin"></a>
-      <a class="a2a_button_skype"></a>
-      <a class="a2a_button_trello"></a>
-      <a class="a2a_button_sms"></a>
-      <a class="a2a_button_copy_link"></a>
-    </div>
-    <script async src="https://static.addtoany.com/menu/page.js"></script>
-    <!-- AddToAny END -->
+  <!-- AddToAny BEGIN -->
+  <h1>Invite via link</h1>
+  <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+    <a class="a2a_button_email"></a>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_whatsapp"></a>
+    <a class="a2a_button_linkedin"></a>
+    <a class="a2a_button_skype"></a>
+    <a class="a2a_button_trello"></a>
+    <a class="a2a_button_sms"></a>
+    <a class="a2a_button_copy_link"></a>
+  </div>
+  <script async src="https://static.addtoany.com/menu/page.js"></script>
+  <!-- AddToAny END -->
 
   <!-- our own footer goes here-->
   <nav id="footerPlaceholder"></nav>
@@ -75,7 +85,8 @@
   <!---------------------------------------------->
   <script src="./scripts/firebaseAPI_TEAM99.js"></script>
   <script src="./scripts/skeleton.js"></script>
-  <script>
+  <script src="./scripts/teams.js"></script>
+  <!-- <script>
     var coll = document.getElementsByClassName("collapsible");
     var i;
 
@@ -90,7 +101,7 @@
         }
       });
     }
-  </script>
+  </script> -->
 
 </body>
 
