@@ -42,7 +42,6 @@ function submitReport() {
             window.location.href = "index.html";
         }
     });
-
 }
 
 function updateStatus(status, userID) {
