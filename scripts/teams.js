@@ -1,10 +1,10 @@
 function createTeam() {
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
-            var currentUser = db.collection("users").doc(user.uid)
+            var userDoc = db.collection("users").doc(user.uid)
             var userID = user.uid;
             //get the document for current user.
-            currentUser.get()
+            userDoc.get()
 
             var teamID = db.collection("team");
             // Team successfully created.
@@ -23,7 +23,15 @@ function createTeam() {
             })
 
             // add teamID to user
-            db.collection("users").doc("teamMembers").appendchild(userID)
+            // db.collection("users").doc(userID).appendchild(teamID)
+
+            userDoc.add({
+                memberOf: teamID
+            })
+
+            // db.collection("users").doc(userID).add({
+            //     memberOf: teamID
+            // })
 
         } else {
             console.log("Please log in"); // No user is signed in.
@@ -31,8 +39,6 @@ function createTeam() {
         }
     })
 }
-
-
 
 // pull a team based on the userID 
 function displayTeam() {
@@ -65,6 +71,7 @@ function joinTeam() {
 
             //teamID and userID are put into variables
             let userID = user.uid;
+            var userDoc = db.collection("users").doc(user.uid)
 
             db.collection("team").get()
                 .then(
@@ -83,6 +90,15 @@ function joinTeam() {
                                 db.collection("team").doc(joinID).update({
                                     teamMembers: firebase.firestore.FieldValue.arrayUnion(userID)
                                 })
+
+                                userDoc.add({
+                                    memberOf: teamID
+                                })
+                    
+                                // db.collection("users").doc(userID).add({
+                                //     memberOf: joinID
+                                // })
+
                             }
                         })
 
