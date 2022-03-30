@@ -1,6 +1,6 @@
-function populateStatusDynamically(userID) {
+function populateHistoryDynamically(userID) {
     let historyTemplate = document.getElementById("historyTemplate");
-    let userData = document.getElementById("data");
+    let historyData = document.getElementById("historyData");
 
     db.collection("users").doc(userID).collection("Reports")
         .orderBy("timestamp", "desc")
@@ -8,14 +8,14 @@ function populateStatusDynamically(userID) {
         .then(allusers => {
             allusers.forEach(doc => {
                 let testHistoryTable = historyTemplate.content.cloneNode(true);
-                var date = doc.data().timestamp; //gets the date field
+                var date = doc.data().timestamp.toDate(); //gets the date field
                 testHistoryTable.querySelector('.date').innerHTML = date;
                 var status = doc.data().currentStatus;
                 testHistoryTable.querySelector('.health-status').innerHTML = status;
                 var cough = doc.data().Cough;
-                testRecordsTable.querySelector('.cough').innerHTML = cough;
+                testHistoryTable.querySelector('.cough').innerHTML = cough;
 
-                userData.appendChild(testHistoryTable);
+                historyData.appendChild(testHistoryTable);
             })
 
         })
@@ -29,7 +29,7 @@ function displayMyHistory() {
             // db.collection("users").doc(userID).get().then(doc => {
             //     team = doc.data().memberOf;
             //     console.log(team);
-                populateStatusDynamically(userID);
+                populateHistoryDynamically(userID);
             // })
         }
     })

@@ -48,7 +48,7 @@
 
     <!-- the body of your page goes here -->
 
-    <template id="recordsTableTemplate">
+    <template id="historyTemplate">
         <tr>
             <td class="date" ></td>
             <td class="health-status btn btn-success"></td>
@@ -66,16 +66,16 @@
     </template>
 
 
-    <h1>Team status</h1>
+    <h1>Report history</h1>
     <table cellpadding="10">
         <thead class="thead-light fs-4">
             <tr>
-                <td>Name</td>
+                <td>Date</td>
                 <td>Current Status</td>
-                <td>Latest Status</td>
+                <td>cough</td>
             </tr>
         </thead>
-        <tbody class="fs-5" id="data">
+        <tbody class="fs-5" id="historyData">
         </tbody>
     </table>
 
@@ -102,7 +102,7 @@
     <!---------------------------------------------->
     <script src="./scripts/firebaseAPI_TEAM99.js"></script>
     <script src="./scripts/skeleton.js"></script>
-    <script src="./scripts/records.js"></script>
+    <script src="./scripts/history.js"></script>
 
 </body>
 
