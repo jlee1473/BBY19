@@ -14,7 +14,7 @@ function createTeam() {
             }).then(function (doc) {
 
                 console.log("New team added to firestore");
-                //window.location.assign("invite.html"); //re-direct to invite.html after signup, comment back in after testing
+                window.location.assign("join-team-complete.html"); //re-direct to invite.html after signup, comment back in after testing
                
                 updateTeam(doc.id, userID); //<---! This teamID needs to be the new one that was just created 
             }).catch(function (error) {
