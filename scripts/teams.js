@@ -8,52 +8,24 @@ function createTeam() {
 
             var teamID = db.collection("team");
             // Team successfully created.
-            // Return type determines whether we continue the redirect automatically
-            // or whether we leave that to developer to handle.
-
-            //write to firestore with a new ID
-            // {teamMembers:currentUser} add inside add() if we want to add user info to team on click
+            // creates a new team with a unique ID and adds the user to that team
             teamID.add({
                 teamMembers: [userID]
-            }).then(function () {
+            }).then(function (doc) {
+
                 console.log("New team added to firestore");
-                window.location.assign("invite.html"); //re-direct to invite.html after signup
+                //window.location.assign("invite.html"); //re-direct to invite.html after signup, comment back in after testing
+               
+                updateTeam(doc.id, userID); //<---! This teamID needs to be the new one that was just created 
             }).catch(function (error) {
                 console.log("Error adding new team: " + error);
             })
-
-            // add teamID to user
-            // db.collection("users").doc(userID).appendchild(teamID)
-
-            userDoc.add({
-                memberOf: teamID
-            })
-
-            // db.collection("users").doc(userID).add({
-            //     memberOf: teamID
-            // })
-
         } else {
             console.log("Please log in"); // No user is signed in.
             window.location.href = "index.html";
         }
     })
 }
-
-function displayMyTeam() {
-    firebase.auth().onAuthStateChanged(user => {
-        if (user) {
-            let userID = user.uid;
-            db.collection("users").doc(userID).get().then(doc => {
-                team = doc.data().memberOf;
-                console.log(team);
-                
-                document.getElementById("team-id").innerHTML = team; 
-            })
-        }
-    })
-}
-displayMyTeam();
 
 // read_display_Quote()        //calling the function
 
@@ -77,7 +49,6 @@ function joinTeam() {
         // Check if user is signed in:
         if (user) {
             // Do something for the current logged-in user here: 
-
             //teamID and userID are put into variables
             let userID = user.uid;
             var userDoc = db.collection("users").doc(user.uid)
@@ -86,44 +57,28 @@ function joinTeam() {
                 .then(
                     snap => {
                         snap.forEach(doc => {
-
                             var teamID = doc.id;
                             var joinID = document.getElementById("jointeam").value;
-
                             console.log(doc.id);
                             console.log(joinID);
-
                             if (joinID == teamID) {
-                                // db.collection("team").doc(joinID).collection("teamMembers").arrayUnion(userID);  <-- incorrect attempt
-                                // db.collection("team").doc(joinID).collection("teamMembers").update( {   <-- incorrect attempt
-                                db.collection("team").doc(joinID).update({
-                                    teamMembers: firebase.firestore.FieldValue.arrayUnion(userID)
-                                }).then(() => {
-                                    updateTeam(joinID, userID);
-                                })
-
-                                userDoc.add({
-                                    memberOf: teamID
-                                })
-
-                                // db.collection("users").doc(userID).add({
-                                //     memberOf: joinID
-                                // })
-
+                                // db.collection("team").doc(joinID).update({
+                                //     teamMembers: firebase.firestore.FieldValue.arrayUnion(userID)
+                                // }).then(() => {
+                                updateTeam(teamID, userID);
                             }
                         })
 
-                    }
-                )
+                    })
         } else {
             console.log("Please log in to join a team");
         }
     })
 }
 
-function updateTeam(joinID, userID) {
+function updateTeam(teamID, userID) {
     db.collection("users").doc(userID).update({
-        memberOf: joinID
+        memberOf: teamID
     })
 }
 
