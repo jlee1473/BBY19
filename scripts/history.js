@@ -26,11 +26,9 @@ function displayMyHistory() {
         if (user) {
 
             let userID = user.uid;
-            // db.collection("users").doc(userID).get().then(doc => {
-            //     team = doc.data().memberOf;
-            //     console.log(team);
+
                 populateHistoryDynamically(userID);
-            // })
+
         }
     })
 }
