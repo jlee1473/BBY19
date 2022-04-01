@@ -14,7 +14,7 @@ function populateHistoryDynamically(userID) {
         .then(allusers => {
             allusers.forEach(doc => {
                 let testHistoryTable = historyTemplate.content.cloneNode(true);
-                var date = doc.data().timestamp.toDate(); 
+                var date = doc.data().timestamp.toDate().toDateString(); 
                 testHistoryTable.querySelector('.date').innerHTML = date;
                 var status = doc.data().currentStatus;
                 testHistoryTable.querySelector('.health-status').innerHTML = status;

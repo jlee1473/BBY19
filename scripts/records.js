@@ -13,7 +13,7 @@ function populateStatusDynamically(team) {
                 testRecordsTable.querySelector('.user-name').innerHTML = teamMember;
                 var status = doc.data().latestStatus;
                 testRecordsTable.querySelector('.health-status').innerHTML = status;
-                var lastUpdate = doc.data().latestStatusTimeStamp.toDate();
+                var lastUpdate = doc.data().latestStatusTimeStamp.toDate().toDateString();
                 testRecordsTable.querySelector('.last-update').innerHTML = lastUpdate;
 
                 userData.appendChild(testRecordsTable);

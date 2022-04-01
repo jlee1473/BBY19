@@ -50,29 +50,21 @@
 
     <template id="recordsTableTemplate">
         <tr>
-            <td class="user-name" ></td>
-            <td id="colorID" class="health-status badge bg-success"></td>
+            <td class="user-name"></td>
+            <td id="colorID" class="health-status btn btn-success" style="position: relative; left: 10%;"></td>
             <td class="last-update"></td>
         </tr>
         <br>
-        <!-- <tr>
-            <td>Jason</td>
-            <td>Healthy</td>
-          </tr>
-          <tr>
-            <td>Gabriel</td>
-            <td>Healthy</td>
-          </tr> -->
     </template>
 
-
-    <h1>Team status</h1>
-    <table cellpadding="10">
-        <thead class="thead-light fs-4">
+    <br>
+    <h1 class="team-status text-center">Team status</h1>
+    <table cellpadding="15">
+        <thead class="thead-light fw-bold fs-4">
             <tr>
                 <td>Name</td>
                 <td>Current Status</td>
-                <td>Latest Status</td>
+                <td>Latest Update</td>
             </tr>
         </thead>
         <tbody class="fs-5" id="data">
