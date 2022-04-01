@@ -16,6 +16,10 @@ firebase.auth().onAuthStateChanged(user => {
     }
 });
 
+// ------------------------------------------------------------------------
+// Called in homepage.html to display the current user's name onto the 
+// landing page.
+// ------------------------------------------------------------------------
 function insertName() {
   // to check if the user is logged in:
 
@@ -32,6 +36,10 @@ function insertName() {
   })
 }
 
+// ------------------------------------------------------------------------
+// Called in homepage.html to display the current user's status onto
+// the landing page.
+// ------------------------------------------------------------------------
 function insertStatus()  {
 
     currentUser.get().then(userDoc => {

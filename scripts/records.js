@@ -42,12 +42,12 @@ populateStatusDynamically();
 
 // function sick() {
 //     if ("latestStatus", "==", "healthy"){
-//         var removeStatus = document.getElementById("myDIV");
-//         removeStatus.classList.remove(btn btn-success);
-//         removeStatus.classList.add(btn btn-warning);
+//         var removeStatus = document.getElementById("colorID");
+//         removeStatus.classList.remove(badge bg-success);
+//         removeStatus.classList.add(badge bg-warning);
 //     } else {
-//         removeStatus.classList.remove(btn btn-warning);
-//         removeStatus.classList.add(btn btn-success);
+//         removeStatus.classList.remove(badge bg-warning);
+//         removeStatus.classList.add(badge bg-success);
 //     }
 //     }
 
