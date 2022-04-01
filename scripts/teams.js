@@ -59,13 +59,15 @@ function joinTeam() {
                         snap.forEach(doc => {
                             var teamID = doc.id;
                             var joinID = document.getElementById("jointeam").value;
+                            joinID = joinID.trim();
                             console.log(doc.id);
                             console.log(joinID);
                             if (joinID == teamID) {
-                                // db.collection("team").doc(joinID).update({
-                                //     teamMembers: firebase.firestore.FieldValue.arrayUnion(userID)
-                                // }).then(() => {
+                                db.collection("team").doc(joinID).update({
+                                    teamMembers: firebase.firestore.FieldValue.arrayUnion(userID)
+                                }).then(() => {
                                 updateTeam(teamID, userID);
+                                })
                             }
                         })
 
