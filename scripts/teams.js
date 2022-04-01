@@ -63,4 +63,5 @@ function updateTeam(teamID, userID) {
     db.collection("users").doc(userID).update({
         memberOf: teamID
     })
+        .then(window.location.href = "join-team-complete.html");
 }
