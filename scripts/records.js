@@ -38,18 +38,18 @@ function displayMyTeam() {
 
 displayMyTeam();
 populateStatusDynamically();
-// sick();
+sick();
 
-// function sick() {
-//     if ("latestStatus", "==", "healthy"){
-//         var removeStatus = document.getElementById("colorID");
-//         removeStatus.classList.remove(badge bg-success);
-//         removeStatus.classList.add(badge bg-warning);
-//     } else {
-//         removeStatus.classList.remove(badge bg-warning);
-//         removeStatus.classList.add(badge bg-success);
-//     }
-//     }
+function sick() {
+    if ("latestStatus", "==", "healthy"){
+        var removeStatus = document.getElementById("colorID");
+        removeStatus.classList.remove(badge bg-success);
+        removeStatus.classList.add(badge bg-warning);
+    } else {
+        removeStatus.classList.remove(badge bg-warning);
+        removeStatus.classList.add(badge bg-success);
+    }
+    }
 
 
 //This function will be reserved for pulling all records for a user after a teams link.
