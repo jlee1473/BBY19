@@ -37,19 +37,32 @@ function displayMyTeam() {
 }
 
 displayMyTeam();
-// populateStatusDynamically();
+populateStatusDynamically();
+// sick();
+
+// function sick() {
+//     if ("latestStatus", "==", "healthy"){
+//         var removeStatus = document.getElementById("myDIV");
+//         removeStatus.classList.remove(btn btn-success);
+//         removeStatus.classList.add(btn btn-warning);
+//     } else {
+//         removeStatus.classList.remove(btn btn-warning);
+//         removeStatus.classList.add(btn btn-success);
+//     }
+//     }
+
 
 //This function will be reserved for pulling all records for a user after a teams link.
-function getStatus(id) {
-            db.collection("users").doc(id).get()
-                .then(doc => {
-                    console.log(doc.data().currentStatus);
-                    // var memberStatus = doc.data().currentStatus;
-                    // let testRecordsTable = recordsTableTemplate.content.cloneNode(true);
-                    // testRecordsTable.querySelector('.health-status').innerHTML = memberStatus;
-                    // hikeCardGroup.appendChild(testRecordsTable);
-                })
-        }
+// function getStatus(id) {
+//             db.collection("users").doc(id).get()
+//                 .then(doc => {
+//                     console.log(doc.data().currentStatus);
+//                     // var memberStatus = doc.data().currentStatus;
+//                     // let testRecordsTable = recordsTableTemplate.content.cloneNode(true);
+//                     // testRecordsTable.querySelector('.health-status').innerHTML = memberStatus;
+//                     // hikeCardGroup.appendChild(testRecordsTable);
+//                 })
+//         }
 
 
     
