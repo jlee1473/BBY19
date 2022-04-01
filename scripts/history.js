@@ -12,8 +12,8 @@ function populateHistoryDynamically(userID) {
                 testHistoryTable.querySelector('.date').innerHTML = date;
                 var status = doc.data().currentStatus;
                 testHistoryTable.querySelector('.health-status').innerHTML = status;
-                var cough = doc.data().Cough;
-                testHistoryTable.querySelector('.cough').innerHTML = cough;
+                // var cough = doc.data().Cough;
+                // testHistoryTable.querySelector('.cough').innerHTML = cough;
 
                 historyData.appendChild(testHistoryTable);
             })
@@ -35,17 +35,7 @@ function displayMyHistory() {
 displayMyHistory();
 // populateStatusDynamically();
 
-//This function will be reserved for pulling all records for a user after a teams link.
-function getStatus(id) {
-            db.collection("users").doc(id).get()
-                .then(doc => {
-                    console.log(doc.data().currentStatus);
-                    // var memberStatus = doc.data().currentStatus;
-                    // let testRecordsTable = recordsTableTemplate.content.cloneNode(true);
-                    // testRecordsTable.querySelector('.health-status').innerHTML = memberStatus;
-                    // hikeCardGroup.appendChild(testRecordsTable);
-                })
-        }
+
 
 
     
