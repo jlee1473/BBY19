@@ -48,10 +48,19 @@
 
     <!-- the body of your page goes here -->
 
-    <template id="recordsTableTemplate">
+    <template id="redButtonRow">
         <tr>
-            <td class="user-name"></td>
-            <td id="colorID" class="health-status btn btn-success" style="position: relative; left: 10%;"></td>
+            <td class="user-name"></td> 
+            <td class="health-status btn btn-danger" style="position: relative; left: 10%;"></td>
+            <td class="last-update"></td>
+        </tr>
+        <br>
+    </template>
+
+    <template id="greenButtonRow">
+        <tr>
+            <td class="user-name"></td> 
+            <td class="health-status btn btn-success" style="position: relative; left: 10%;"></td>
             <td class="last-update"></td>
         </tr>
         <br>
@@ -59,6 +68,7 @@
 
     <br>
     <h1 class="team-status text-center">Team status</h1>
+    <div id="status-goes-here"></div>
     <table cellpadding="15">
         <thead class="thead-light fw-bold fs-4">
             <tr>
