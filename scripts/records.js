@@ -65,27 +65,7 @@ function listenStatus() {
 }
 listenStatus();
 
-function displayEmployees() {
-    db.collection("users")
-         .get()
-         .then(function (snap) {
-             document.getElementById("status-goes-here").innerHTML = ""
-             snap.forEach(doc => {
-                 //console.log(doc.data());
-                 //console.log(doc.data().name);
-                 console.log(doc.data().latestStatus);
-                 if (doc.data().latestStatus == "recovering")
-                 showStatus();
-                    //  document.getElementById("status-goes-here").innerHTML +=
-                    //  "<button type='button' class='btn btn-danger'>" +
-                    //  doc.data().name + " is " + doc.data().latestStatus + "</button> <br>"
-                 else
-                     document.getElementById("status-goes-here").innerHTML +=
-                     "<button type='button' class='btn btn-success'>" +
-                     doc.data().name + " is " + doc.data().latestStatus + "</button> <br>"
-             })
-         })
-}
+
 
         
     // function displayEmployees() {

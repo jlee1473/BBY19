@@ -21,30 +21,42 @@ firebase.auth().onAuthStateChanged(user => {
 // landing page.
 // ------------------------------------------------------------------------
 function insertName() {
-  // to check if the user is logged in:
+    // to check if the user is logged in:
 
 
-  currentUser.get().then(userDoc => {
-      //get the user name
-      var user_Name = userDoc.data().name;
-      console.log(user_Name);
-      $("#name-goes-here").text(user_Name); //jquery
-      // document.getElementByID("name-goes-here").innetText=user_Name;
+    currentUser.get().then(userDoc => {
+        //get the user name
+        var user_Name = userDoc.data().name;
+        console.log(user_Name);
+        $("#name-goes-here").text(user_Name); //jquery
+        // document.getElementByID("name-goes-here").innetText=user_Name;
 
 
 
-  })
+    })
 }
 
 // ------------------------------------------------------------------------
 // Called in homepage.html to display the current user's status onto
 // the landing page.
 // ------------------------------------------------------------------------
-function insertStatus()  {
+function insertStatus() {
+    let greenStatus = document.getElementById("greenStatus");
+    let redStatus = document.getElementById("redStatus");
+    let statusData = document.getElementById("insertStatus");
+    statusData.innerHTML = "";
 
     currentUser.get().then(userDoc => {
         var status = userDoc.data().latestStatus;
         console.log(status);
-        $("#status-goes-here").text(status);
+        if (status == "recovering")
+            statusLabel = redStatus.content.cloneNode(true);
+        else
+            statusLabel = greenStatus.content.cloneNode(true);
+        statusLabel.querySelector('.status-goes-here').innerHTML = status;
+        // console.log(status);
+
+        // $("#status-goes-here").text(status);
+        statusData.appendChild(statusLabel);
     })
 }
