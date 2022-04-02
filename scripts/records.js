@@ -38,7 +38,7 @@ function displayMyTeam() {
         }
     })
 }
-displayMyTeam();
+// displayMyTeam();
 
 //goes to the users collection, and gives everyone "ok", or "sick"
 function updateHealth(status) {
