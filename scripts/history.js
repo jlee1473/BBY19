@@ -1,22 +1,22 @@
-// ------------------------------------------------------------------------
-// Called in the displayMyHistory function which passes the user.uid as 
-// a parameter to display all of the user's previous reports ordered 
-// by date.
-// ------------------------------------------------------------------------
-
 function populateHistoryDynamically(userID) {
-    let historyTemplate = document.getElementById("historyTemplate");
+    let redHistoryTemplate = document.getElementById("redHistoryTemplate");
+    let greenHistoryTemplate = document.getElementById("greenHistoryTemplate");
     let historyData = document.getElementById("historyData");
+    historyData.innerHTML = "";
 
     db.collection("users").doc(userID).collection("Reports")
         .orderBy("timestamp", "desc")
         .get()
         .then(allusers => {
             allusers.forEach(doc => {
-                let testHistoryTable = historyTemplate.content.cloneNode(true);
-                var date = doc.data().timestamp.toDate().toDateString(); 
-                testHistoryTable.querySelector('.date').innerHTML = date;
+                // let testHistoryTable = historyTemplate.content.cloneNode(true);
+                var date = doc.data().timestamp.toDate().toDateString();
                 var status = doc.data().currentStatus;
+                if (status == "recovering")
+                    testHistoryTable = redHistoryTemplate.content.cloneNode(true);
+                else
+                    testHistoryTable = greenHistoryTemplate.content.cloneNode(true);
+                testHistoryTable.querySelector('.date').innerHTML = date;
                 testHistoryTable.querySelector('.health-status').innerHTML = status;
                 // var cough = doc.data().Cough;
                 // testHistoryTable.querySelector('.cough').innerHTML = cough;
@@ -38,7 +38,7 @@ function displayMyHistory() {
 
             let userID = user.uid;
 
-                populateHistoryDynamically(userID);
+            populateHistoryDynamically(userID);
 
         }
     })
@@ -49,4 +49,4 @@ displayMyHistory();
 
 
 
-    
+

@@ -48,7 +48,7 @@
 
     <!-- the body of your page goes here -->
 
-    <template id="historyTemplate">
+    <template id="greenHistoryTemplate">
         <tr>
             <td class="date"></td>
             <td class="health-status badge bg-success" style="position: relative; left: 15%;"></td>
@@ -56,21 +56,63 @@
         <br>
     </template>
 
+    <template id="redHistoryTemplate">
+        <tr>
+            <td class="date"></td>
+            <td class="health-status badge bg-danger" style="position: relative; left: 15%;"></td>
+        </tr>
+        <br>
+    </template>
 
-    <br><h1 class="Report text-center">Report history</h1>
+
+    <br>
+    <h1 class="Report text-center">Report history</h1>
     <div class="report-history">
+        <table cellpadding="15">
+            <thead class="thead-light fw-bold fs-4">
+                <tr>
+                    <td>Date</td>
+                    <td>Status</td>
+                </tr>
+            </thead>
+            <tbody class="fs-5" id="historyData">
+            </tbody>
+        </table>
+    </div>
+    <br><br><br><br>
+
+    <!-- <template id="redButtonRow">
+        <tr>
+            <td class="user-name"></td>
+            <td class="health-status btn btn-danger" style="position: relative; left: 10%;"></td>
+            <td class="last-update"></td>
+        </tr>
+        <br>
+    </template>
+
+    <template id="greenButtonRow">
+        <tr>
+            <td class="user-name"></td>
+            <td class="health-status btn btn-success" style="position: relative; left: 10%;"></td>
+            <td class="last-update"></td>
+        </tr>
+        <br>
+    </template>
+
+    <br>
+    <h1 class="team-status text-center">Team status</h1>
+    <div id="status-goes-here"></div>
     <table cellpadding="15">
         <thead class="thead-light fw-bold fs-4">
             <tr>
-                <td>Date</td>
-                <td>Status</td>
+                <td>Name</td>
+                <td>Current Status</td>
+                <td>Latest Update</td>
             </tr>
         </thead>
-        <tbody class="fs-5" id="historyData">
+        <tbody class="fs-5" id="data">
         </tbody>
-    </table>
-    </div>
-<br><br><br><br>
+    </table> -->
 
 
     <!------Code for having employee name with a button-->
