@@ -3,7 +3,6 @@
  * customize material design icon sizes 
  *-------------------------------------
  */
-
 .material-icons.md-18 { font-size: 18px; }
 .material-icons.md-24 { font-size: 24px; }
 .material-icons.md-36 { font-size: 36px; }
@@ -63,6 +62,7 @@
     list-style-type: none;
   }
 
+  /* the main page image */
   #homeimage {
     width: 100%;
     height: auto;
@@ -73,8 +73,6 @@
     font-size: 25pt;
   }
   
-
-
   /* input[value="healthy"] {
     background-color: green;
   }
