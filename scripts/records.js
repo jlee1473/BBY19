@@ -20,7 +20,6 @@ function populateStatusDynamically(team) {
                 testRecordsTable.querySelector('.health-status').innerHTML = status;
                 var lastUpdate = doc.data().latestStatusTimeStamp.toDate().toDateString();
                 testRecordsTable.querySelector('.last-update').innerHTML = lastUpdate;
-
                 userData.appendChild(testRecordsTable);
             })
         })
@@ -39,7 +38,7 @@ function displayMyTeam() {
     })
 }
 
-//goes to the users collection, and gives everyone "healthy", or "recovering"
+//goes to the users collection, and goes through each user and updates their status to "healthy", or "recovering"
 function updateHealth(status) {
     //define a variable for the collection you want to create in Firestore to populate data
     db.collection("users")
