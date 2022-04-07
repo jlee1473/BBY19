@@ -17,7 +17,6 @@ function submitReport() {
     let chestPain = document.querySelector('input[name="chest-pain"]:checked').value;
     console.log(chestPain);
 
-
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
             var userID = user.uid;
@@ -41,10 +40,8 @@ function submitReport() {
     });
 }
 
-// ------------------------------------------------------------------------
 // Invoked once submitReport is called to update the users collection 
 // userID with the users current status.
-// ------------------------------------------------------------------------
 function updateStatus(status, userID) {
     db.collection("users").doc(userID).update({
         latestStatus: status,
