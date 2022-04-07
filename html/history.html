@@ -3,11 +3,7 @@
 
 <head>
     <title>Reportify</title>
-    <meta name="comp1800 template" content="My 1800 App">
-
-    <!------------------------>
-    <!-- Required meta tags -->
-    <!------------------------>
+    <meta name="Reportify" content="My 1800 App">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -18,7 +14,7 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-        </script>
+    </script>
 
     <!-------------------------------------------------------->
     <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
@@ -39,15 +35,8 @@
 </head>
 
 <body>
-    <!------------------------------>
-    <!-- Your HTML Layout go here -->
-    <!------------------------------>
-
-    <!-- our own navbar goes here -->
     <nav id="navbarPlaceholder"></nav>
-
-    <!-- the body of your page goes here -->
-
+    
     <template id="greenHistoryTemplate">
         <tr>
             <td class="date"></td>
@@ -55,7 +44,6 @@
         </tr>
         <br>
     </template>
-
     <template id="redHistoryTemplate">
         <tr>
             <td class="date"></td>
@@ -63,8 +51,6 @@
         </tr>
         <br>
     </template>
-
-
     <br>
     <h1 class="Report text-center">Report history</h1>
     <div class="report-history">
@@ -81,60 +67,8 @@
     </div>
     <br><br><br><br>
 
-    <!-- <template id="redButtonRow">
-        <tr>
-            <td class="user-name"></td>
-            <td class="health-status btn btn-danger" style="position: relative; left: 10%;"></td>
-            <td class="last-update"></td>
-        </tr>
-        <br>
-    </template>
-
-    <template id="greenButtonRow">
-        <tr>
-            <td class="user-name"></td>
-            <td class="health-status btn btn-success" style="position: relative; left: 10%;"></td>
-            <td class="last-update"></td>
-        </tr>
-        <br>
-    </template>
-
-    <br>
-    <h1 class="team-status text-center">Team status</h1>
-    <div id="status-goes-here"></div>
-    <table cellpadding="15">
-        <thead class="thead-light fw-bold fs-4">
-            <tr>
-                <td>Name</td>
-                <td>Current Status</td>
-                <td>Latest Update</td>
-            </tr>
-        </thead>
-        <tbody class="fs-5" id="data">
-        </tbody>
-    </table> -->
-
-
-    <!------Code for having employee name with a button-->
-    <!-- <div id="employeeName" class="container text-center">
-        <br><br><br><br><br><br>
-        <a href="records3.html" class="btn btn-primary btn-lg" role="button">Employee Name 1</a><br><br><br>
-    </div>
-    <div id="employeeName" class="container text-center">
-        <br><br><br><br><br><br>
-        <a href="records3.html" class="btn btn-primary btn-lg" role="button">Employee Name 2</a><br><br><br>
-    </div>
-    <div id="employeeName" class="container text-center">
-        <br><br><br><br><br><br>
-        <a href="records3.html" class="btn btn-primary btn-lg" role="button">Employee Name 3</a><br><br><br>
-    </div> -->
-
-    <!-- our own footer goes here-->
     <nav id="footerPlaceholder"></nav>
 
-    <!---------------------------------------------->
-    <!-- Your own JavaScript functions go here    -->
-    <!---------------------------------------------->
     <script src="../scripts/firebaseAPI_TEAM99.js"></script>
     <script src="../scripts/skeleton.js"></script>
     <script src="../scripts/history.js"></script>
