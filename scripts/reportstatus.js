@@ -1,7 +1,5 @@
-// ------------------------------------------------------------------------
 // Called upon clicking the submit button in reportstatus.html 
 // once the user has finished selecting all options for their self-report.
-// ------------------------------------------------------------------------
 function submitReport() {
 
     // Value of current status input assigned to status variable.

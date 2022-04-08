@@ -31,10 +31,8 @@ function insertName() {
     })
 }
 
-// ------------------------------------------------------------------------
 // Called in homepage.html to display the current user's status onto
 // the landing page.
-// ------------------------------------------------------------------------
 function insertStatus() {
     let greenStatus = document.getElementById("greenStatus");
     let redStatus = document.getElementById("redStatus");
