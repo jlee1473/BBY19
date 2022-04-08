@@ -1,4 +1,4 @@
-## My Web Application (Add your Title here)
+## Reportify (COMP 1800 - Team 19 - Set1A)
 
 * [General info](#general-info)
 * [Technologies](#technologies)
@@ -9,10 +9,10 @@ This browser based web application to ...
 	
 ## Technologies
 Technologies used for this project:
-* HTML, CSS
+* JSON, HTML, CSS
 * JavaScript
 * Bootstrap 
-* ...
+* Firebase
 	
 ## Content
 Content of the project folder:
@@ -20,21 +20,56 @@ Content of the project folder:
 ```
  Top level of project folder: 
 ├── .gitignore               # Git ignore file
-├── index.html               # landing HTML file, this is what users see when you come to url
+├── 404.html                 # basic error page
 └── README.md
 
 It has the following subfolders and files:
 ├── .git                     # Folder for git repo
 ├── images                   # Folder for images
-    /blah.jpg                # 
+    /covid.jepg              # main page image
+    /covid2.jpeg             # logo image
 ├── scripts                  # Folder for scripts
-    /blah.js                 # 
+    /authentication.js       # login code
+    /firebaseAPI_TEAM19.js   # js connect to firebase
+    /history.js              # js for report history
+    /homepage.js             # js for welcome screen
+    /invite.js               # js for team invites
+    /records.js              # js for health records
+    /reportstatus.js         # js for status updates
+    /skeleton.js             # js for navbar and footer
+    /teams.js                # js for joinTeam and createTeam functions
 ├── styles                   # Folder for styles
-    /blah.css                # 
+    /styles.css              # css file for all styles
+├── html                     # all html pages
+    /aboutus.html            # about Reportify page
+    /connect.html            # teams: base page for team functions
+    /createteam.html         # teams: create teams page
+    /help.html               # user FAQ page
+    /history.html            # report function: display page for user report history
+    /homepage.html           # welcome page for Reportify
+    /index.html              # landing page
+    /invite.html             # teams: invite teams page
+    /join-team-complete.html # teams: concluding page for join team function
+    /jointhisteam.html       # teams: join teams page
+    /login.html              # sign-in page
+    /records.html            # 
+    /records2.html           # 
+    /recovery.html           # 
+    /report.html             # 
+    /reportstatus.html       # 
+    /submit-complete.html    # 
+└── text                     # template data for all pages (footer and nav)
+    /footer.html             # footer html data
+    /nav.html                # navbar data
 
 Firebase hosting files: 
-├── .firebaserc...
-
+├── .firebaserc 
+├── .firebase
+├── firebase.json
+├── firestore.indexes.json
+├── firestore.rules
+└── storage.rules            
+# auto-generated firebase/firestore data
 
 ```
 
