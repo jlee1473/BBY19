@@ -4,7 +4,7 @@ function populateHistoryDynamically(userID) {
     let greenHistoryTemplate = document.getElementById("greenHistoryTemplate");
     let historyData = document.getElementById("historyData");
     historyData.innerHTML = ""; //Clears all of the html from "historyData".
-
+    
     //Goes into the Reports subcollection and for the user logged in, it goes through 
     //each document and stores the date and status the user submitted for each report
     //and populates the data into the redHistoryTemplate or greenHistoryTemplate.
@@ -26,7 +26,6 @@ function populateHistoryDynamically(userID) {
             })
         })
 }
-
 
 // Called upon loading into history.html which will confirm if the user
 // has logged in and pass their user.uid as a parameter to 
