@@ -52,8 +52,8 @@ It has the following subfolders and files:
     /join-team-complete.html # teams: concluding page for join team function
     /jointhisteam.html       # teams: join teams page
     /login.html              # sign-in page
-    /records.html            # 
-    /records2.html           # 
+    /records.html            # records HTML file, this is what users see after clicking the records button
+    /records2.html           # records2 HTML file, this displays the team's members and their current status
     /recovery.html           # 
     /report.html             # 
     /reportstatus.html       # 
