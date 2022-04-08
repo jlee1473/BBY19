@@ -1,7 +1,5 @@
-// ------------------------------------------------------------------------
 // Called upon clicking the submit button in reportstatus.html 
 // once the user has finished selecting all options for their self-report.
-// ------------------------------------------------------------------------
 function submitReport() {
 
     // Value of current status input assigned to status variable.
@@ -22,7 +20,7 @@ function submitReport() {
 
             var userID = user.uid;
             // Write the values to a document in a subcollection called "Reports" located 
-            // within a collection of "users" the current users' specific user id.
+            // within a collection of "users" in the current users' user id.
             db.collection("users").doc(user.uid).collection("Reports").add({
                 userID: userID,
                 currentStatus: status,

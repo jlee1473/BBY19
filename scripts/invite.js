@@ -1,4 +1,3 @@
-
 // Displays the data from the memberOf field in the "team-id" box
 function displayMyTeam() {
     firebase.auth().onAuthStateChanged(user => {
