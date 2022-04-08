@@ -1,4 +1,6 @@
-//
+//This function checks if the user is logged in, and if they are then stores their unique
+//userID into the userID variable and then goes into the users collection and gets the team
+//ID of that user and passes it as a parameter into populateStatusDynamically().
 function displayMyTeam() {
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
@@ -12,12 +14,14 @@ function displayMyTeam() {
     })
 }
 
-//This function inserts the users 
+//This function gets all the users that are on the same team and for each member of the team, it gets
+//their name, latestStatus and latest update time and inserts it into the appropriate template. This 
+//also displays the sickest users at the top of the list.
 function populateStatusDynamically(team) {
     let redButtonRow = document.getElementById("redButtonRow");
     let greenButtonRow = document.getElementById("greenButtonRow");
     let userData = document.getElementById("data");
-    //Clears the html stored in the userData variable which is pointing to the "data" id.
+    //Clears the html stored in the userData variable which is pointing to the "data" id from records2.html.
     userData.innerHTML = ""; 
 
     db.collection("users")
@@ -40,12 +44,14 @@ function populateStatusDynamically(team) {
                 //and time of the users last self-report and formats it for readability
                 var lastUpdate = doc.data().latestStatusTimeStamp.toDate().toDateString(); 
                 testRecordsTable.querySelector('.last-update').innerHTML = lastUpdate; 
-                userData.appendChild(testRecordsTable); //inserts this information into the corresponding redButtonRow or greenButtonRow template.
+                //inserts this information into the corresponding redButtonRow or greenButtonRow template.
+                userData.appendChild(testRecordsTable); 
             })
         })
 }
 
-//Live listener for any changes made to the users collection which will invoke the displayMyTeam() function if there are any changes.
+//Live listener for any changes made to the users collection which will 
+//invoke the displayMyTeam() function if there are any changes.
 function listenStatus() {
     db.collection("users")
         .onSnapshot(snap => {
