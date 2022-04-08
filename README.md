@@ -54,10 +54,9 @@ It has the following subfolders and files:
     /login.html              # sign-in page
     /records.html            # records HTML file, this is what users see after clicking the records button
     /records2.html           # records2 HTML file, this displays the team's members and their current status
-    /recovery.html           # 
-    /report.html             # 
-    /reportstatus.html       # 
-    /submit-complete.html    # 
+    /report.html             # report HTML file, displays self-report menu after clicking report button (+ icon)
+    /reportstatus.html       # reportstatus HTML file, displays the survey after clicking self-report button
+    /submit-complete.html    # submit-complete HTML file, displays confirmation page after completing report
 └── text                     # template data for all pages (footer and nav)
     /footer.html             # footer html data
     /nav.html                # navbar data
