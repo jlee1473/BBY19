@@ -43,11 +43,12 @@ function submitReport() {
     });
 }
 
-// Invoked once submitReport is called to update the latestStatus field with either a "healthy" or "recovering" status
-// in the users' specific user id document located in the "users" collection.
+// Invoked once submitReport is called to update the latestStatus field with 
+// either a "healthy" or "recovering" status in the users' specific user id
+// document located in the "users" collection.
 function updateStatus(status, userID) {
-    // Updates the users' latest status with the same value they submitted in the submitReport function along with
-    // the timestamp at the time of submission
+    // Updates the users' latest status with the same value they submitted in 
+    // the submitReport function along with the timestamp at the time of submission
     db.collection("users").doc(userID).update({
         latestStatus: status,
         latestStatusTimeStamp: firebase.firestore.FieldValue.serverTimestamp()

@@ -14,30 +14,37 @@ function displayMyTeam() {
     })
 }
 
-//This function gets all the users that are on the same team and for each member of the team, it gets
-//their name, latestStatus and latest update time and inserts it into the appropriate template. This 
-//also displays the sickest users at the top of the list.
+//This function gets all the users that are on the same team and for each 
+//member of the team, it gets their name, latestStatus and latest update time and
+//inserts it into the appropriate template. This also displays the
+//sickest users at the top of the list.
 function populateStatusDynamically(team) {
     let redButtonRow = document.getElementById("redButtonRow");
     let greenButtonRow = document.getElementById("greenButtonRow");
     let userData = document.getElementById("data");
-    //Clears the html stored in the userData variable which is pointing to the "data" id from records2.html.
+    //Clears the html stored in the userData variable which 
+    //is pointing to the "data" id from records2.html.
     userData.innerHTML = ""; 
 
     db.collection("users")
-        //gets each person from the users collection that is on the same team as the user logged in.
+        //gets each person from the users collection that is on 
+        //the same team as the user logged in.
         .where("memberOf", "==", team) 
-        //orders the display of each user displaying the users that are of "recovering" status first and then "healthy" status.
+        //orders the display of each user displaying the users that are of 
+        //"recovering" status first and then "healthy" status.
         .orderBy("latestStatus", "desc") 
         .get()
         .then(allusers => {
             allusers.forEach(doc => {
                 var teamMember = doc.data().name; //gets the name field
-                var status = doc.data().latestStatus; //gets the latest health status from the latestStatus field.
+                //gets the latest health status from the latestStatus field.
+                var status = doc.data().latestStatus; 
                 if (status == "recovering")
-                    testRecordsTable = redButtonRow.content.cloneNode(true); //Copies the attributes of the redButtonRow template.
+                    //Copies the attributes of the redButtonRow template.
+                    testRecordsTable = redButtonRow.content.cloneNode(true); 
                 else
-                    testRecordsTable = greenButtonRow.content.cloneNode(true); //Copies the attributes of the greenButtonRow template.
+                    //Copies the attributes of the greenButtonRow template.
+                    testRecordsTable = greenButtonRow.content.cloneNode(true); 
                 testRecordsTable.querySelector('.user-name').innerHTML = teamMember;
                 testRecordsTable.querySelector('.health-status').innerHTML = status;
                 //Reads the latestStatusTimeStamp value from firebase and displays the date
