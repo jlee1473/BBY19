@@ -1,7 +1,6 @@
 // Called upon clicking the submit button in reportstatus.html 
 // once the user has finished selecting all options for their self-report.
 function submitReport() {
-
     // Value of current status input assigned to status variable.
     let status = document.querySelector('input[name="status"]:checked').value;
     // Value of cough severity input assigned to cough variable.
@@ -17,7 +16,6 @@ function submitReport() {
     // Confirms if a user is signed in. 
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
-
             var userID = user.uid;
             // Write the values to a document in a subcollection called "Reports" located 
             // within a collection of "users" in the current users' user id.
